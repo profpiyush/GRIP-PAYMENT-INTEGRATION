@@ -1,0 +1,113 @@
+.main-header {
+    position: fixed;
+    z-index: 100;
+    width: 100vw;
+    padding: 0 10vw;
+    background: rgba($color: #366061, $alpha: 1);
+    color: #fff;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo {
+            width: 20%;
+            img {
+                width: 200px;
+                height: 7rem;
+            }
+        }
+        .menu-btn,
+        .menu-icon {
+            display: none;
+        }
+
+        .nav-links {
+            width: 70%;
+            min-height: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            font-size: 1.6rem;
+            list-style: none;
+
+            .nav-link {
+                margin-left: 1.5rem;
+                display: flex;
+                flex-direction: column;
+                a {
+                    text-decoration: none;
+                    color: #fff;
+                    &:hover::after {
+                        content: "";
+                        top: 0;
+                        bottom: 0;
+                        display: block;
+                        height: 3px;
+                        background: #c3875d;
+                        margin-top: 10px;
+                        animation-name: navLinkHover;
+                        animation-duration: 0.3s;
+                    }
+                }
+
+                button {
+                    padding: 0.3rem 0.5rem;
+                    border-radius: 12px;
+                    font-size: large;
+                    cursor: pointer;
+
+                    margin: 1.2rem auto;
+
+                    &:hover {
+                        background: #c3875d;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        .menu-icon {
+            position: relative;
+            padding: 26px 10px;
+            cursor: pointer;
+            z-index: 1;
+            display: none;
+            &__line {
+                display: block;
+                position: relative;
+                background: #fff;
+                height: 2px;
+                width: 20px;
+                border-radius: 4px;
+
+                &::before,
+                &::after {
+                    content: "";
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 4px;
+                    background: #fff;
+                    transition: background 0.2s ease, transform 0.5s ease-in;
+                }
+                &::before {
+                    transform: translateY(-5px);
+                }
+                &::after {
+                    transform: translateY(5px);
+                }
+            }
+        }
+        .menu-btn {
+            display: none;
+        }
+    }
+}
+
+@keyframes navLinkHover {
+    from {
+        width: 1px;
+    }
+    to {
+        width: 100%;
+    }
+}

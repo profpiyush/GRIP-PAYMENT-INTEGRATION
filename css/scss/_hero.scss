@@ -1,0 +1,46 @@
+.hero {
+    width: 100vw;
+    height: 70vh;
+    background: url("https://images.pexels.com/photos/1440388/pexels-photo-1440388.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #fff2e8;
+    user-select: none;
+    span {
+        font-size: 10rem;
+        font-weight: 700;
+    }
+    .span1 {
+        animation: hero-animation-span1 5s ease-out infinite;
+    }
+    .span2 {
+        margin-top: 10vh;
+        animation: hero-animation-span2 5s ease-out infinite;
+    }
+}
+
+@keyframes hero-animation-span1 {
+    0% {
+        transform: translateX(-5vw);
+        opacity: 0.2;
+    }
+    40% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes hero-animation-span2 {
+    0% {
+        transform: translateX(5vw);
+        opacity: 0.2;
+    }
+    40% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
